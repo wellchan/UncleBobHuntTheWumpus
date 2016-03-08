@@ -1,0 +1,20 @@
+!|scenario|Can hear pit after moving _ _|start,direction|
+|clear messages|
+|Given the player is in cavern @start|
+|When the player rests|
+|Then a HEAR_PIT message is not given|
+|When the player goes @direction|
+|Then a HEAR_PIT message is given|
+
+-!|script|
+|Given Cross Map|
+|Given the Middle cavern has a pit|
+
+!|Can hear pit after moving|
+|start|direction|
+|FarLeft|East|
+|Top|South|
+|FarRight|West|
+|Bottom|North|
+
+

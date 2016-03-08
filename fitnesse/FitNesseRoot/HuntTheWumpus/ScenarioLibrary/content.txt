@@ -1,0 +1,158 @@
+!3 Cavern Scenarios
+
+|scenario|Given cavern|c1|connects to cavern|c2|going|dir|
+|Connect cavern|@c1|to|@c2|going|@dir|
+
+|Scenario|Cavern Connections _ _ _|start,end,direction|
+|Given cavern @start connects to cavern @end going @direction|
+
+|scenario|Given the _ cavern has a pit|cavern|
+|set cavern|@cavern|as pit|
+
+|scenario|Given the _ cavern has bats|cavern|
+|set cavern|@cavern|as bats|
+
+|scenario|Given the _ cavern has a pit|cavern|
+|set cavern|@cavern|as pit|
+
+!3 Player Scenarios
+
+|scenario|Given the player is in cavern|c|
+|put player in cavern|@c|
+|$startingCavern=|get player cavern|
+
+|scenario|When the player goes|dir|
+|move player|@dir|
+
+|scenario|When the player moves _ 4 times|direction|
+|move player|@direction|
+|move player|@direction|
+|move player|@direction|
+|move player|@direction|
+
+|scenario|When the player rests|
+|rest|
+
+|scenario|Then the player is in cavern|c|
+|check|get player cavern|@c|
+
+|scenario|When the player rests until killed|
+|rest until killed|
+
+!3 Arrow Scenarios
+|scenario|Given the player has no arrows|
+|set arrows in quiver to|0|
+
+|scenario|When the player shoots _|direction|
+|shoot arrow|@direction|
+
+|scenario|Given the player has 1 arrow|
+|set arrows in quiver to|1|
+
+|scenario|Given the player has _ arrows|arrows|
+|set arrows in quiver to|@arrows|
+
+|scenario|Then the player has _ arrows|arrows|
+|check|arrows in quiver|@arrows|
+
+|scenario|Then the player has no arrows|
+|check|arrows in quiver|0|
+
+|scenario|Then the player has 1 arrow|
+|check|arrows in quiver|1|
+
+|scenario|Then there is 1 arrow in cavern|cavern|
+|check|arrows in cavern|@cavern|1|
+
+|scenario|Then there are _ arrows in cavern _|arrows,cavern|
+|check|arrows in cavern|@cavern|@arrows|
+
+
+!3 Wumpus Scenarios
+
+|scenario|Given the wumpus is in cavern|c|
+|put wumpus in cavern|@c|
+|$startingWumpusCavern=|get wumpus cavern|
+
+|scenario|Given the wumpus is frozen|
+|freeze wumpus|
+
+|scenario|Then the wumpus is in cavern|c|
+|check|get wumpus cavern|@c|
+
+!3 Message Scenarios
+
+|scenario|Then a _ message is given|msg|
+|ensure|Message id|@msg|was given|
+
+|scenario|Then a _ message is not given|msg|
+|ensure|Message id|@msg|was not given|
+
+!3 Movement Scenarios
+
+|scenario|Moving _ ends in cavern _|direction,cavern|
+|When the player goes @direction|
+|Then the player is in cavern @cavern|
+
+
+!3 Common Maps
+
+{{{
+Donut Map
+
+[3]<-[2]<-[1]
+ |         A
+ V         |
+[4]       [8]
+ |         A
+ V         |
+[5]->[6]->[7]
+}}}
+
+|scenario|Given Donut Map|
+|Connect Cavern|1|to|2|going|West|
+|Connect Cavern|2|to|3|going|West|
+|Connect Cavern|3|to|4|going|South|
+|Connect Cavern|4|to|5|going|South|
+|Connect Cavern|5|to|6|going|East|
+|Connect Cavern|6|to|7|going|East|
+|Connect Cavern|7|to|8|going|North|
+|Connect Cavern|8|to|1|going|North|
+
+{{{
+Cross Map
+''Links are bidirectional''
+
+
+                 [ Top  ]
+
+                 [Above ]
+
+[FarLeft] [Left] [Middle] [Right] [FarRight]
+
+                 [Below ]
+
+                 [Bottom]
+
+}}}
+!|scenario|Given Cross Map|
+|Connect Cavern|FarLeft|to|Left|going|East|
+|Connect Cavern|Left|to|FarLeft|going|West|
+|Connect Cavern|Left|to|Middle|going|East|
+|Connect Cavern|Middle|to|Left|going|West|
+|Connect Cavern|Middle|to|Right|going|East|
+|Connect Cavern|Right|to|Middle|going|West|
+|Connect Cavern|Right|to|FarRight|going|East|
+|Connect Cavern|FarRight|to|Right|going|West|
+|Connect Cavern|Top|to|Above|going|South|
+|Connect Cavern|Above|to|Top|going|North|
+|Connect Cavern|Above|to|Middle|going|South|
+|Connect Cavern|Middle|to|Above|going|North|
+|Connect Cavern|Middle|to|Below|going|South|
+|Connect Cavern|Below|to|Middle|going|North|
+|Connect Cavern|Bottom|to|Below|going|North|
+|Connect Cavern|Below|to|Bottom|going|South|
+
+
+
+

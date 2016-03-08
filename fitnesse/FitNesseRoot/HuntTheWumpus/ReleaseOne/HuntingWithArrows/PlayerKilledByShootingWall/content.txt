@@ -1,0 +1,6 @@
+-!|script|
+|Given Cross Map|
+|Given the player is in cavern FarLeft|
+|Given the player has 1 arrow|
+|When the player shoots North|
+|Then a|PLAYER_SHOOTS_WALL|message is given|
