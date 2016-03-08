@@ -3,6 +3,7 @@ package htw;
 import htw.game.HuntTheWumpusGame;
 
 public interface HuntTheWumpus {
+  //test commit
   public enum Direction {
     NORTH {
       public Direction opposite() {
