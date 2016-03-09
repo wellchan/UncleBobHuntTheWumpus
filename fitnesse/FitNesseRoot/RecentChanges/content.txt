@@ -1,5 +1,7 @@
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.OneWumpusShot||14:47:40 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck||14:31:07 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.StriaghtMapTest||14:24:36 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.IncorrectNumberWumpusesGenerated||12:29:38 Wed, Mar 09, 2016|
-|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck||12:19:59 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.ErrorGeneratingNewGeneration||12:18:24 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.MultipleWumpusesInOneCavern||11:59:00 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.MultipleWumpusesAttack||11:51:28 Wed, Mar 09, 2016|
