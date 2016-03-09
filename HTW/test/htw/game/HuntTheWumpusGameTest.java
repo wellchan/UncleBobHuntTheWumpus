@@ -48,7 +48,7 @@ public class HuntTheWumpusGameTest {
 
     // TODO test moveWumpusHelper and moveWumpuses
     @Test
-    public void moveOneWumpus() {
+    public void moveOneWumpus_OneChoice() {
         game = EasyMock.createMockBuilder(HuntTheWumpusGame.class).addMockedMethod("getWumpusChoices").createMock();
         wumpusCaverns.add("C1");
         game.setWumpusCaverns(wumpusCaverns);
@@ -64,7 +64,23 @@ public class HuntTheWumpusGameTest {
         assertTrue(game.getWumpusCaverns().contains("C2"));
     }
 
+    @Test
+    public void moveOneWumpus_TwoChoices() {
+        game = EasyMock.createMockBuilder(HuntTheWumpusGame.class).addMockedMethod("getWumpusChoices").createMock();
+        wumpusCaverns.add("C1");
+        game.setWumpusCaverns(wumpusCaverns);
+        List<String> choices = new ArrayList<String>();
+        choices.add("B1");
+        choices.add("B2");
 
+        EasyMock.expect(game.getWumpusChoices("C1")).andReturn(choices);
+        EasyMock.replay(game);
+        game.moveWumpuses();
+        EasyMock.verify(game);
+
+        assertEquals(1, game.getWumpusCaverns().size());
+        assertTrue(choices.containsAll(game.getWumpusCaverns()));
+    }
 
     private void addCavernsToGame(HuntTheWumpusGame game, Set<String> wumpusCaverns) {
         for (String cavern: wumpusCaverns) {
