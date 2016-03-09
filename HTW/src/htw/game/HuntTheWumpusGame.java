@@ -23,6 +23,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     this.messageReceiver = receiver;
   }
 
+  public HuntTheWumpusGame() {}
+
   public void setPlayerCavern(String playerCavern) {
     this.playerCavern = playerCavern;
   }
@@ -71,6 +73,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
   public String getWumpusCavern() {
     return wumpusCavern;
+  }
+
+  public Set<String> getWumpusCaverns() {
+    return wumpusCaverns;
   }
 
   protected void moveWumpus() { // TODO to be deleted or used?
@@ -163,7 +169,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
       reportStatus();
     }
 
-    protected void checkWumpusMovedToPlayer() {
+    protected void checkWumpusMovedToPlayer() { // TODO update to iterate over all wumpuses
       if (playerCavern.equals(wumpusCavern))
         messageReceiver.wumpusMovesToPlayer();
     }
@@ -231,7 +237,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
         return this;
       }
 
-      private boolean shotWumpus() {
+      private boolean shotWumpus() { // TODO update to go over all wumpus caverns
         if (arrowCavern.equals(wumpusCavern)) {
           messageReceiver.playerKillsWumpus();
           hitSomething = true;
@@ -276,7 +282,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     }
 
     private void checkForWumpus() {
-      if (wumpusCavern.equals(playerCavern))
+      if (wumpusCavern.equals(playerCavern)) // TODO update to check all wumpus caverns
         messageReceiver.playerMovesToWumpus();
     }
 
