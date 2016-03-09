@@ -7,4 +7,5 @@ public class DummyClass {
     public static void main(String[] args) {
         System.out.println("HI");
     }
+    //This is Weier's test
 }
