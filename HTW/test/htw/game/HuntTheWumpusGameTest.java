@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -80,6 +81,30 @@ public class HuntTheWumpusGameTest {
 
         assertEquals(1, game.getWumpusCaverns().size());
         assertTrue(choices.containsAll(game.getWumpusCaverns()));
+    }
+
+    @Test
+    public void wumpusCavernsContainsPlayer() {
+        String playerCavern = "C1";
+        Set<String> wumpusCaverns = new HashSet<String>();
+        wumpusCaverns.add("C1");
+        wumpusCaverns.add("C2");
+        game.setPlayerCavern(playerCavern);
+        game.setWumpusCaverns(wumpusCaverns);
+
+        assertTrue(game.isWumpusMovedToPlayer());
+    }
+
+    @Test
+    public void wumpusCavernsDoesNotContainPlayer() {
+        String playerCavern = "C1";
+        Set<String> wumpusCaverns = new HashSet<String>();
+        wumpusCaverns.add("D1");
+        wumpusCaverns.add("C2");
+        game.setPlayerCavern(playerCavern);
+        game.setWumpusCaverns(wumpusCaverns);
+
+        assertFalse(game.isWumpusMovedToPlayer());
     }
 
     private void addCavernsToGame(HuntTheWumpusGame game, Set<String> wumpusCaverns) {
