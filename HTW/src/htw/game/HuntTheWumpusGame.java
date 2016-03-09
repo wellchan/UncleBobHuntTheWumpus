@@ -14,18 +14,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   private HtwMessageReceiver messageReceiver;
   private Set<String> batCaverns = new HashSet<>();
   private Set<String> pitCaverns = new HashSet<>();
+  private Set<String> wumpusCaverns = new HashSet<>();
   private String wumpusCavern = "NONE"; // TODO this var to be deleted
   private int quiver = 0;
   private Map<String, Integer> arrowsIn = new HashMap<>();
-  private Set<String> wumpusCaverns = new HashSet<>();
-	
-	public Set<String> getWumpusCaverns() {
-		return wumpusCaverns;
-	}
-
-	public void setWumpusCaverns(Set<String> wumpusCaverns) {
-		this.wumpusCaverns = wumpusCaverns;
-	}
 
   public HuntTheWumpusGame(HtwMessageReceiver receiver) {
     this.messageReceiver = receiver;
@@ -83,16 +75,29 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     return wumpusCavern;
   }
 
-  protected String moveWumpusHelper(String startCavern) { // TODO to be deleted or used?
+  public void setWumpusCaverns(Set<String> wumpusCaverns) {
+    this.wumpusCaverns = wumpusCaverns;
+  }
+
+  public Set<String> getWumpusCaverns() {
+    return wumpusCaverns;
+  }
+
+  protected String moveWumpusHelper(String startCavern) {
+    List<String> wumpusChoices = getWumpusChoices(startCavern);
+
+    int nChoices = wumpusChoices.size();
+    int choice = (int) (Math.random() * nChoices);
+    return wumpusChoices.get(choice);
+  }
+
+  protected List<String> getWumpusChoices(String startCavern) {
     List<String> wumpusChoices = new ArrayList<>();
     for (Connection c : connections)
       if (startCavern.equals(c.from))
         wumpusChoices.add(c.to);
     wumpusChoices.add(startCavern);
-
-    int nChoices = wumpusChoices.size();
-    int choice = (int) (Math.random() * nChoices);
-    return wumpusChoices.get(choice);
+    return wumpusChoices;
   }
 
   protected void moveWumpus() {
@@ -100,9 +105,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   }
 
   protected void moveWumpuses() {
+    Set<String> newWumpusCaverns = new HashSet<String>();
     for (String cavern: wumpusCaverns) {
-      cavern = moveWumpusHelper(cavern);
+      newWumpusCaverns.add(moveWumpusHelper(cavern));
     }
+    setWumpusCaverns(newWumpusCaverns);
   }
 
   private void randomlyTransportPlayer() {
@@ -173,7 +180,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   public abstract class GameCommand implements Command {
     public void execute() {
       processCommand();
-      moveWumpus();
+      moveWumpus(); // TODO call moveWumpuses
       checkWumpusMovedToPlayer();
       reportStatus();
     }
