@@ -44,6 +44,8 @@ public class HuntTheWumpusGameTest {
         assertTrue(game.getWumpusCaverns().contains("C2"));
     }
 
+    // TODO test moveWumpusHelper and moveWumpuses
+
     private void addCavernsToGame(HuntTheWumpusGame game, Set<String> wumpusCaverns) {
         for (String cavern: wumpusCaverns) {
             game.addWumpusCavern(cavern);

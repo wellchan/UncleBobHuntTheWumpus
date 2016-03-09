@@ -79,21 +79,26 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     return wumpusCaverns;
   }
 
-  protected void moveWumpus() { // TODO to be deleted or used?
+  protected String moveWumpusHelper(String startCavern) { // TODO to be deleted or used?
     List<String> wumpusChoices = new ArrayList<>();
     for (Connection c : connections)
-      if (wumpusCavern.equals(c.from))
+      if (startCavern.equals(c.from))
         wumpusChoices.add(c.to);
-    wumpusChoices.add(wumpusCavern);
+    wumpusChoices.add(startCavern);
 
     int nChoices = wumpusChoices.size();
     int choice = (int) (Math.random() * nChoices);
-    wumpusCavern = wumpusChoices.get(choice);
+    return wumpusChoices.get(choice);
+  }
+
+  protected void moveWumpus() {
+    wumpusCavern = moveWumpusHelper(wumpusCavern);
   }
 
   protected void moveWumpuses() {
-    // TODO
-    // for each cavern in wumpusCaverns, moveWumpus
+    for (String cavern: wumpusCaverns) {
+      cavern = moveWumpusHelper(cavern);
+    }
   }
 
   private void randomlyTransportPlayer() {
