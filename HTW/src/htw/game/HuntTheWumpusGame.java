@@ -39,7 +39,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
       messageReceiver.hearBats();
     if (reportNearby(c -> pitCaverns.contains(c.to)))
       messageReceiver.hearPit();
-    if (reportNearby(c -> wumpusCavern.equals(c.to)))
+    if (reportNearby(c -> wumpusCaverns.contains(c.to)))
       messageReceiver.smellWumpus();
   }
 
@@ -268,7 +268,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
       protected boolean isArrowHitAWumpus(String arrowCavern) {
         return wumpusCaverns.contains(arrowCavern);
-        //random change
       }
 
       private boolean shotSelfInBack() {
@@ -307,7 +306,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     }
 
     private void checkForWumpus() {
-      if (wumpusCavern.equals(playerCavern)) // TODO update to check all wumpus caverns
+      if (wumpusCavern.equals(playerCavern))
         messageReceiver.playerMovesToWumpus();
     }
 
