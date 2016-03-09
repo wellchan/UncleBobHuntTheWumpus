@@ -268,6 +268,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
       protected boolean isArrowHitAWumpus(String arrowCavern) {
         return wumpusCaverns.contains(arrowCavern);
+        //random change
       }
 
       private boolean shotSelfInBack() {
