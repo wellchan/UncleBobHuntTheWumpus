@@ -306,7 +306,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     }
 
     private void checkForWumpus() {
-      if (wumpusCavern.equals(playerCavern))
+      if (wumpusCaverns.contains(playerCavern))
         messageReceiver.playerMovesToWumpus();
     }
 
