@@ -1,0 +1,4 @@
+|scenario|Given Wumpuses in Play are 0|
+|set Wumpuses in Play to|0|
+|ensure| message id|Game Over|was given|
+

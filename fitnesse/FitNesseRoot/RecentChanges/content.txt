@@ -1,3 +1,9 @@
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.IncorrectNumberWumpusesGenerated||12:29:38 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck||12:19:59 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.ErrorGeneratingNewGeneration||12:18:24 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.MultipleWumpusesInOneCavern||11:59:00 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseOne.MultipleWumpusesCheck.MultipleWumpusesAttack||11:51:28 Wed, Mar 09, 2016|
+|HuntTheWumpus||08:55:04 Wed, Mar 09, 2016|
 |HuntTheWumpus.ScenarioLibrary||13:46:54 Wed, Nov 11, 2015|
 |HuntTheWumpus.ReleaseOne.PlayerRecievesStatusAfterEachTurn.AvailablePassagesAreReported||11:59:47 Tue, Oct 13, 2015|
 |HuntTheWumpus.ReleaseOne.PitCaverns.PlayerIsInformedAboutFallingIntoPit||06:57:44 Tue, Oct 13, 2015|
@@ -29,7 +35,6 @@
 |HuntTheWumpus.ReleaseOne.PlayerCanMoveThroughTheMap.CanMoveThroughASeriesOfConnections||12:10:32 Tue, Oct 06, 2015|
 |HuntTheWumpus.ReleaseOne.PlayerCanMoveThroughTheMap.CantMoveThroughUndeclaredConnections||13:09:30 Fri, Sep 04, 2015|
 |HuntTheWumpus.ReleaseOne.PlayerCanMoveThroughTheMap.CanMoveThroughConnections||12:32:51 Fri, Sep 04, 2015|
-|HuntTheWumpus||10:41:08 Fri, Sep 04, 2015|
 |HuntTheWumpus.ReleaseOne.PlayerCanMoveThroughTheMap||10:24:07 Fri, Sep 04, 2015|
 |HuntTheWumpus.ReleaseOne||10:21:37 Fri, Sep 04, 2015|
 |FrontPage||10:14:02 Fri, Sep 04, 2015|

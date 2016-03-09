@@ -1,0 +1,12 @@
+|Given |Straight Map|
+
+|script|
+|Given the wumpus "A" is in cavern| 2|
+|Given the wumpus "B" is in cavern| 4|
+|Given the player is in cavern|3|
+When the player rests until killed
+Move  wumpus "A" East
+Move wumpus "B" West
+|ensure|message id|WUMPUS_MOVES_TO_PLAYER|was given|
+
+

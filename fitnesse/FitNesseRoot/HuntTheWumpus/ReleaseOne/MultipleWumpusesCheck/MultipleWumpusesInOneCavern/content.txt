@@ -1,0 +1,8 @@
+|Given |Straight Map|
+
+|script|
+|Given the wumpus "A" is in cavern| 2|
+|Given the wumpus "B" is in cavern| 3|
+|Given the wumpus "B" is frozen|
+Move  wumpus "A" East
+Both wumpus "A" and "B" in cavern 3

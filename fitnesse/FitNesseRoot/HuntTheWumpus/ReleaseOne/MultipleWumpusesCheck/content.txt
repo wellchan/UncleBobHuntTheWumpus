@@ -1,0 +1,44 @@
+|Wumpuses in Play|
+|Wumpuses Killed| Wumpuses reported as still in play?|
+|0|1|
+|1|2|
+|2|1|
+|3|3|
+|4|2|
+|5|1|
+|6|4|
+|7|3|
+|8|2|
+|9|1|
+|10|5|
+
+
+|Wumpus Kill Count|
+|Wumpuses Killed| Total Reported as Killed?|
+|0|0|
+|1|1|
+|2|2|
+|3|3|
+|4|4|
+|5|5|
+
+
+
+
+|Straight Map|
+[1]<-> [2]<->[3]<->[4]<->[5]
+
+
+|Scenario|Given Straight Map|
+|Connect Cavern|1|to|2|going|East|
+|Connect Cavern|2|to|1|going|West|
+|Connect Cavern|3|to|2|going|West|
+|Connect Cavern|2|to|3|going|East|
+|Connect Cavern|3|to|4|going|East|
+|Connect Cavern|4|to|3|going|West|
+|Connect Cavern|4|to|5|going|East|
+|Connect Cavern|5|to|4|going|West|
+
+
+|script|
+|Given the wumpus is in cavern|2|

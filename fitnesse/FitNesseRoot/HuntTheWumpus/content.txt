@@ -1,5 +1,4 @@
 !define TEST_SYSTEM {slim}
-!path ../HTW/out/production/HTW
-!path ../HTW/out/test/HTW
+!path /Users/admin/git/UncleBobHuntTheWumpus/bin
 
 !contents -R2 -g -p -f -h
