@@ -180,18 +180,22 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   public abstract class GameCommand implements Command {
     public void execute() {
       processCommand();
-      moveWumpus(); // TODO call moveWumpuses
+      moveWumpuses(); // TODO call moveWumpuses
       checkWumpusMovedToPlayer();
       reportStatus();
     }
 
-    protected void checkWumpusMovedToPlayer() { // TODO update to iterate over all wumpuses
-      if (playerCavern.equals(wumpusCavern))
+    protected void checkWumpusMovedToPlayer() {
+      if (isWumpusMovedToPlayer())
         messageReceiver.wumpusMovesToPlayer();
     }
 
     protected abstract void processCommand();
 
+  }
+
+  protected boolean isWumpusMovedToPlayer() {
+    return wumpusCaverns.contains(playerCavern);
   }
 
   private class RestCommand extends GameCommand {
