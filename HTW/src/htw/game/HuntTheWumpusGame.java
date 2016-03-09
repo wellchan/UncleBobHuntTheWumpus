@@ -14,7 +14,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   private HtwMessageReceiver messageReceiver;
   private Set<String> batCaverns = new HashSet<>();
   private Set<String> pitCaverns = new HashSet<>();
-  private Set<String> wumpusCaverns = new HashSet<>();
+  private List<String> wumpusCaverns = new ArrayList<>();
   private String wumpusCavern = "NONE"; // TODO this var to be deleted
   private int quiver = 0;
   private Map<String, Integer> arrowsIn = new HashMap<>();
@@ -75,11 +75,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     return wumpusCavern;
   }
 
-  public void setWumpusCaverns(Set<String> wumpusCaverns) {
+  public void setWumpusCaverns(List<String> wumpusCaverns) {
     this.wumpusCaverns = wumpusCaverns;
   }
 
-  public Set<String> getWumpusCaverns() {
+  public List<String> getWumpusCaverns() {
     return wumpusCaverns;
   }
 
@@ -105,7 +105,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   }
 
   protected void moveWumpuses() {
-    Set<String> newWumpusCaverns = new HashSet<String>();
+    List<String> newWumpusCaverns = new ArrayList<String>();
     for (String cavern: wumpusCaverns) {
       newWumpusCaverns.add(moveWumpusHelper(cavern));
     }
