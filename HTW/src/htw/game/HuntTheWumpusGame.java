@@ -180,7 +180,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   public abstract class GameCommand implements Command {
     public void execute() {
       processCommand();
-      moveWumpuses(); // TODO call moveWumpuses
+      moveWumpuses();
       checkWumpusMovedToPlayer();
       reportStatus();
     }
@@ -257,13 +257,17 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
         return this;
       }
 
-      private boolean shotWumpus() { // TODO update to go over all wumpus caverns
-        if (arrowCavern.equals(wumpusCavern)) {
+      private boolean shotWumpus() {
+        if (isArrowHitAWumpus(arrowCavern)) {
           messageReceiver.playerKillsWumpus();
           hitSomething = true;
           return true;
         }
         return false;
+      }
+
+      protected boolean isArrowHitAWumpus(String arrowCavern) {
+        return wumpusCaverns.contains(arrowCavern);
       }
 
       private boolean shotSelfInBack() {
