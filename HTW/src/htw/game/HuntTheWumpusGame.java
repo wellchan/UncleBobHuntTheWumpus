@@ -14,10 +14,18 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   private HtwMessageReceiver messageReceiver;
   private Set<String> batCaverns = new HashSet<>();
   private Set<String> pitCaverns = new HashSet<>();
-  private Set<String> wumpusCaverns = new HashSet<>();
   private String wumpusCavern = "NONE"; // TODO this var to be deleted
   private int quiver = 0;
   private Map<String, Integer> arrowsIn = new HashMap<>();
+  private Set<String> wumpusCaverns = new HashSet<>();
+	
+	public Set<String> getWumpusCaverns() {
+		return wumpusCaverns;
+	}
+
+	public void setWumpusCaverns(Set<String> wumpusCaverns) {
+		this.wumpusCaverns = wumpusCaverns;
+	}
 
   public HuntTheWumpusGame(HtwMessageReceiver receiver) {
     this.messageReceiver = receiver;
@@ -73,10 +81,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
   public String getWumpusCavern() {
     return wumpusCavern;
-  }
-
-  public Set<String> getWumpusCaverns() {
-    return wumpusCaverns;
   }
 
   protected String moveWumpusHelper(String startCavern) { // TODO to be deleted or used?

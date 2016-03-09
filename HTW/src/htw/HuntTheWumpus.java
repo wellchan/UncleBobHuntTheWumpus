@@ -1,5 +1,7 @@
 package htw;
 
+import java.util.Set;
+
 import htw.game.HuntTheWumpusGame;
 
 public interface HuntTheWumpus {
@@ -33,8 +35,10 @@ public interface HuntTheWumpus {
   String getPlayerCavern();
   void addBatCavern(String cavern);
   void addPitCavern(String cavern);
+  void addWumpusCavern(String cavern);
   void setWumpusCavern(String wumpusCavern);
   String getWumpusCavern();
+  Set<String> getWumpusCaverns();
   void setQuiver(int arrows);
   int getQuiver();
   Integer getArrowsInCavern(String cavern);
