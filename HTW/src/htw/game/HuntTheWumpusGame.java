@@ -14,7 +14,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   private HtwMessageReceiver messageReceiver;
   private Set<String> batCaverns = new HashSet<>();
   private Set<String> pitCaverns = new HashSet<>();
-  private String wumpusCavern = "NONE";
+  private Set<String> wumpusCaverns = new HashSet<>();
+  private String wumpusCavern = "NONE"; // TODO this var to be deleted
   private int quiver = 0;
   private Map<String, Integer> arrowsIn = new HashMap<>();
 
@@ -62,6 +63,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     pitCaverns.add(cavern);
   }
 
+  public void addWumpusCavern(String cavern) { wumpusCaverns.add(cavern); }
+
   public void setWumpusCavern(String wumpusCavern) {
     this.wumpusCavern = wumpusCavern;
   }
@@ -70,7 +73,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     return wumpusCavern;
   }
 
-  protected void moveWumpus() {
+  protected void moveWumpus() { // TODO to be deleted or used?
     List<String> wumpusChoices = new ArrayList<>();
     for (Connection c : connections)
       if (wumpusCavern.equals(c.from))
@@ -80,6 +83,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     int nChoices = wumpusChoices.size();
     int choice = (int) (Math.random() * nChoices);
     wumpusCavern = wumpusChoices.get(choice);
+  }
+
+  protected void moveWumpuses() {
+    // TODO
+    // for each cavern in wumpusCaverns, moveWumpus
   }
 
   private void randomlyTransportPlayer() {
