@@ -1,10 +1,8 @@
 package htw.game;
 
-import htw.HtwMessageReceiver;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
-import org.powermock.api.easymock.PowerMock;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,7 +28,8 @@ public class HuntTheWumpusGameTest {
 
     @Test
     public void addOneWumpus_WumpusCavernsSizeOne() {
-        initializeOneWumpus();
+        wumpusCaverns.add("C1");
+        addCavernsToGame(game, wumpusCaverns);
 
         assertEquals(1, game.getWumpusCaverns().size());
         assertTrue(game.getWumpusCaverns().contains("C1"));
@@ -48,19 +47,24 @@ public class HuntTheWumpusGameTest {
     }
 
     // TODO test moveWumpusHelper and moveWumpuses
-//    @Test
-//    public void moveOneWumpus() {
-//        game = EasyMock.createMockBuilder(HuntTheWumpusGame.class).addMockedMethod("getWumpusChoices").createMock();
-//        initializeOneWumpus();
-//
-//        List<String> choices = new ArrayList<String>();
-//        choices.add("C2");
-//        EasyMock.expect(game.getWumpusChoices("C1")).andReturn(choices).anyTimes();
-//        EasyMock.replay(game);
-//        game.moveWumpuses();
-//        EasyMock.verify(game);
-//
-//    }
+    @Test
+    public void moveOneWumpus() {
+        game = EasyMock.createMockBuilder(HuntTheWumpusGame.class).addMockedMethod("getWumpusChoices").createMock();
+        wumpusCaverns.add("C1");
+        game.setWumpusCaverns(wumpusCaverns);
+        List<String> choices = new ArrayList<String>();
+        choices.add("C2");
+
+        EasyMock.expect(game.getWumpusChoices("C1")).andReturn(choices);
+        EasyMock.replay(game);
+        game.moveWumpuses();
+        EasyMock.verify(game);
+
+        assertEquals(1, game.getWumpusCaverns().size());
+        assertTrue(game.getWumpusCaverns().contains("C2"));
+    }
+
+
 
     private void addCavernsToGame(HuntTheWumpusGame game, Set<String> wumpusCaverns) {
         for (String cavern: wumpusCaverns) {
@@ -68,8 +72,4 @@ public class HuntTheWumpusGameTest {
         }
     }
 
-    private void initializeOneWumpus() {
-        wumpusCaverns.add("C1");
-        addCavernsToGame(game, wumpusCaverns);
-    }
 }
