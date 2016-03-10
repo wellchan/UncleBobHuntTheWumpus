@@ -17,8 +17,7 @@
 
 
 |scenario|Then cavern _ has _ Wumpuses|cavern,wumpuses|
-||
-
+|check|wumpuses in cavern|@cavern|@wumpuses|
 
 
 !3 Player Scenarios

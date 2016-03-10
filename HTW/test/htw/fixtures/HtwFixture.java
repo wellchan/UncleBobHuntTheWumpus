@@ -145,4 +145,12 @@ public class HtwFixture {
     game.setLevel(wumpuses);
     return true;
   }
+
+  public int wumpusesInCavern(String cavern) {
+    int wumpuses = 0;
+    for (String c: game.getWumpusCaverns()) {
+      if (c.equals(cavern)) wumpuses++;
+    }
+    return wumpuses;
+  }
 }
