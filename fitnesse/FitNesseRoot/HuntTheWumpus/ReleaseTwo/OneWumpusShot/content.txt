@@ -1,0 +1,11 @@
+|script|
+|Given a wumpus is in cavern|2|
+|Given a wumpus is in cavern|3|
+|Given Straight Map|
+|Given the player is in cavern|1|
+|Given the player has 1 arrow|
+|shoot arrow| East|
+|Then a|WUMPUS_KILLED|message is given|
+
+
+

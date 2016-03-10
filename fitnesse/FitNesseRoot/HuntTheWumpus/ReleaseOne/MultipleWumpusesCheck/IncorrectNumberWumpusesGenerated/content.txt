@@ -1,7 +1,0 @@
-|Wumpuses in Play|
-|Wumpuses Killed| Wumpuses reported as still in play?|
-|0|1|
-|1|2|
-|2|1|
-|3|4|
-|ensure|message id| 

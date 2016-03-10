@@ -1,0 +1,9 @@
+|script|
+|Given Wumpus Map|
+|Given a wumpus is in cavern|1|
+|Given a wumpus is in cavern|3|
+|Given the player is in cavern|2|
+|When the player rests until killed|
+|Then a WUMPUS_MOVES_TO_PLAYER message is given|
+
+
