@@ -1,4 +1,4 @@
-!|scenario|Can smell wumpus after moving _ _|start,direction|
+!|scenario|Can smell a wumpus after moving _ _|start,direction|
 |clear messages|
 |Given the player is in cavern @start|
 |When the player rests|
@@ -8,10 +8,10 @@
 
 -!|script|
 |Given Cross Map|
-|Given the wumpus is in cavern Middle|
-|Given the wumpus is frozen|
+|Given a wumpus is in cavern Middle|
+|Given wumpus is frozen|
 
-!|Can smell wumpus after moving|
+!|Can smell a wumpus after moving|
 |start|direction|
 |FarLeft|East|
 |Top|South|

@@ -70,15 +70,23 @@
 
 !3 Wumpus Scenarios
 
-|scenario|Given the wumpus is in cavern|c|
+|scenario|Given a wumpus is in cavern|c|
 |put wumpus in cavern|@c|
 |$startingWumpusCavern=|get wumpus cavern|
 
-|scenario|Given the wumpus is frozen|
+|scenario|Given wumpus is frozen|
 |freeze wumpus|
 
-|scenario|Then the wumpus is in cavern|c|
+|scenario|Then a wumpus is in cavern|c|
 |check|get wumpus cavern|@c|
+
+|scenario| Given the game has _ wumpuses|wumpuses|
+|set wumpuses in game to|@wumpuses|
+
+|scenario| Then the game has _ wumpuses|wumpuses|
+|check| wumpuses in game|@wumpuses|
+
+
 
 !3 Message Scenarios
 
@@ -169,5 +177,21 @@ Straight Map
 |Connect Cavern|5|to|4|going|West|
 
 
+{{{
+Wumpus Map
+[1]->[2]<-[3]
+}}}
 
+|Scenario|Given Wumpus Map|
+|Connect Cavern|1|to|2|going|East|
+|Connect Cavern|3|to|2|going|West|
+
+
+{{{
+Simple Map
+[1]->[2]
+}}}
+
+|Scenario|Given Simple Map|
+|Connect Cavern|1|to|2|going|East|
 

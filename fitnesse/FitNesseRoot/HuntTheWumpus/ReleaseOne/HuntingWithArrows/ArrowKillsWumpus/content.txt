@@ -1,7 +1,7 @@
 -!|script|
 |Given Cross Map|
 |Given the player is in cavern FarLeft|
-|Given the wumpus is in cavern Middle|
+|Given a wumpus is in cavern Middle|
 |Given the player has 1 arrow|
 |When the player shoots East|
 |Then there are 0 arrows in cavern FarRight|

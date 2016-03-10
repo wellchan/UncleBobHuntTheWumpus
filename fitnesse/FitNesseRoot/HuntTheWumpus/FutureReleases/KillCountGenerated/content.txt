@@ -1,0 +1,8 @@
+|Wumpus Kill Count|
+|Wumpuses Killed| Total Reported as Killed?|
+|0|0|
+|1|1|
+|2|2|
+|3|3|
+|4|4|
+|5|5|

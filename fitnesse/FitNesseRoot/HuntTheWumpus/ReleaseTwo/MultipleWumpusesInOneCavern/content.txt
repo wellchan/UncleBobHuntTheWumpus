@@ -1,0 +1,5 @@
+!|script|
+|Given cavern Left connects to cavern Right going East|
+|Given a wumpus is in cavern Right|
+|Given a wumpus is in cavern Right|
+|Then cavern Right has 2 Wumpuses|

@@ -97,10 +97,14 @@ public class HtwFixture {
   }
 
   public boolean restUntilKilled() {
-    while (!getPlayerCavern().equals(getWumpusCavern()))
+	System.out.println("resting until killed.");
+    for (int i=0; i<100;  i++) {
       game.makeRestCommand().execute();
+      if (getPlayerCavern().equals(getWumpusCavern()))
+        return true;
+    }
 
-    return true;
+    return false;
   }
 
 
