@@ -27,7 +27,7 @@ public class HtwFixture {
   }
 
   public boolean putWumpusInCavern(String c) {
-    game.setWumpusCavern(c);
+    game.addWumpusCavern(c);
     return true;
   }
 

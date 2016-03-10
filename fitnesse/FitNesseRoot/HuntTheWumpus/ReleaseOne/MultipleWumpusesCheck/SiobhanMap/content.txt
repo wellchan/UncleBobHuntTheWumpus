@@ -1,0 +1,25 @@
+Siobhan Map
+
+[3]<-[2]<-[1]
+ |         A
+ V         |
+[4]       [8]
+ |         A
+ V         |
+[5]->[6]->[7]
+
+ 
+|scenario|Given Siobhan Map|
+|Connect Cavern|1|to|2|going|West|
+|Connect Cavern|2|to|3|going|West|
+|Connect Cavern|3|to|4|going|South|
+|Connect Cavern|4|to|5|going|South|
+|Connect Cavern|5|to|6|going|East|
+|Connect Cavern|6|to|7|going|East|
+|Connect Cavern|7|to|8|going|North|
+|Connect Cavern|8|to|1|going|North|
+
+|script|
+|Given Siobhan Map|
+
+

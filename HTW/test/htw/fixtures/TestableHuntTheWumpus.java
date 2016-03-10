@@ -6,9 +6,9 @@ import htw.game.HuntTheWumpusGame;
 public class TestableHuntTheWumpus extends HuntTheWumpusGame {
   private boolean wumpusFrozen = false;
 
-  protected void moveWumpus() {
+  protected void moveWumpuses() {
     if (!wumpusFrozen)
-      super.moveWumpus();
+      super.moveWumpuses();
   }
 
   public TestableHuntTheWumpus(HtwMessageReceiver receiver) {

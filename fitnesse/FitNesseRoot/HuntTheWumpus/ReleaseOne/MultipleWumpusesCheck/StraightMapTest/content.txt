@@ -1,0 +1,15 @@
+|Straight Map|
+[1]<-> [2]<->[3]<->[4]<->[5]
+
+
+|Scenario|Given Straight Map|
+|Connect Cavern|1|to|2|going|East|
+|Connect Cavern|2|to|1|going|West|
+|Connect Cavern|3|to|2|going|West|
+|Connect Cavern|2|to|3|going|East|
+|Connect Cavern|3|to|4|going|East|
+|Connect Cavern|4|to|3|going|West|
+|Connect Cavern|4|to|5|going|East|
+|Connect Cavern|5|to|4|going|West|
+
+
