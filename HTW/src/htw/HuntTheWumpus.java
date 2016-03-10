@@ -6,6 +6,7 @@ import java.util.Set;
 import htw.game.HuntTheWumpusGame;
 
 public interface HuntTheWumpus {
+
   public enum Direction {
     NORTH {
       public Direction opposite() {
@@ -33,6 +34,7 @@ public interface HuntTheWumpus {
   void setPlayerCavern(String playerCavern);
 
   String getPlayerCavern();
+  void setLevel(int wumpusCounter);
   void addBatCavern(String cavern);
   void addPitCavern(String cavern);
   void addWumpusCavern(String cavern);

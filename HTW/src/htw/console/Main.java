@@ -89,6 +89,7 @@ public class Main implements HtwMessageReceiver {
 		System.out.print("Enter: ");
 		wumpusCounter = input.nextInt();
 
+		game.setLevel(wumpusCounter);
 		for (int i = 0; i < wumpusCounter; i++) {
 			game.addWumpusCavern(anyOther(playerCavern));
 		}
@@ -130,7 +131,7 @@ public class Main implements HtwMessageReceiver {
 		}
 	}
 
-	private static String anyOther(String cavern) {
+	protected static String anyOther(String cavern) {
 		String otherCavern = cavern;
 		while (cavern.equals(otherCavern)) {
 			otherCavern = anyCavern();
@@ -209,12 +210,16 @@ public class Main implements HtwMessageReceiver {
 
 	public void playerKilledAllWumpuses() {
 		System.out.println("You have killed all the Wumpuses.");
-		System.exit(0);
 	}
 
 	@Override
 	public void wumpusesRemaining(int wumpusesRemaining) {
 		System.out.println("You have " + wumpusesRemaining + " Wumpuses left to kill.");
+	}
+
+	@Override
+	public void generatingWumpuses() {
+		System.out.println("Wumpus reinforcements on the way...");
 	}
 
 	private void hit(int points) {

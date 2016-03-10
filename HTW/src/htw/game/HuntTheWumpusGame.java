@@ -19,11 +19,21 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   private int quiver = 0;
   private Map<String, Integer> arrowsIn = new HashMap<>();
 
+  private int level = 1;
+
   public HuntTheWumpusGame(HtwMessageReceiver receiver) {
     this.messageReceiver = receiver;
   }
 
   public HuntTheWumpusGame() {}
+
+  public int getLevel() {
+    return level;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
 
   public void setPlayerCavern(String playerCavern) {
     this.playerCavern = playerCavern;
@@ -260,8 +270,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
       private boolean shotWumpus() {
         if (isArrowHitAWumpus(arrowCavern)) {
           removeWumpus(arrowCavern);
-          messageReceiver.playerKillsWumpus();
-          messageReceiver.wumpusesRemaining(wumpusCaverns.size());
           hitSomething = true;
           return true;
         }
@@ -292,8 +300,42 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
   private void removeWumpus(String cavern) {
     wumpusCaverns.remove(cavern);
-    if (wumpusCaverns.isEmpty())
+    if (wumpusCaverns.isEmpty()) {
       messageReceiver.playerKilledAllWumpuses();
+      generateAdditionalWumpuses();
+      messageReceiver.generatingWumpuses();
+      messageReceiver.wumpusesRemaining(wumpusCaverns.size());
+    } else {
+      messageReceiver.playerKillsWumpus();
+      messageReceiver.wumpusesRemaining(wumpusCaverns.size());
+    }
+  }
+
+  private void generateAdditionalWumpuses() {
+    level++;
+    for (int i = 0; i < level; i++) {
+      addWumpusCavern(anyOtherCavern(playerCavern));
+    }
+  }
+
+  private String anyCavern() {
+    return getCavernsAsList().get((int) (Math.random() * caverns.size()));
+  }
+
+  private List<String> getCavernsAsList() {
+    List<String> cavernList = new ArrayList<String>();
+    for (String c: caverns) {
+      cavernList.add(c);
+    }
+    return cavernList;
+  }
+
+  private String anyOtherCavern(String cavern) {
+    String otherCavern = cavern;
+    while (cavern.equals(otherCavern)) {
+      otherCavern = anyCavern();
+    }
+    return otherCavern;
   }
 
   private class MoveCommand extends GameCommand {

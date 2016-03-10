@@ -2,6 +2,12 @@ HTW/out
 HTW/.idea
 HTW/.idea/workspace.xml
 HTW/.DS_Store
-
-
+*.zip
 /bin/
+*.jar
+.idea
+*.iml
+.DS_Store
+
+
+

@@ -45,6 +45,11 @@ public class TestContext implements HtwMessageReceiver {
     messages.add("WUMPUSES_REMAINING");
   }
 
+  @Override
+  public void generatingWumpuses() {
+    messages.add("GENERATING_WUMPUSES");
+  }
+
   public void wumpusMovesToPlayer() {
     messages.add("WUMPUS_MOVES_TO_PLAYER");
   }

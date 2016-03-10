@@ -18,4 +18,5 @@ public interface HtwMessageReceiver {
   void batsTransport();
   void playerKilledAllWumpuses();
   void wumpusesRemaining(int wumpusesRemaining);
+  void generatingWumpuses();
 }
