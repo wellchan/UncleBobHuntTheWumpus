@@ -1,11 +1,11 @@
 package htw;
 
+import java.util.List;
 import java.util.Set;
 
 import htw.game.HuntTheWumpusGame;
 
 public interface HuntTheWumpus {
-  //test commit1
   public enum Direction {
     NORTH {
       public Direction opposite() {
@@ -38,7 +38,7 @@ public interface HuntTheWumpus {
   void addWumpusCavern(String cavern);
   void setWumpusCavern(String wumpusCavern);
   String getWumpusCavern();
-  Set<String> getWumpusCaverns();
+  List<String> getWumpusCaverns();
   void setQuiver(int arrows);
   int getQuiver();
   Integer getArrowsInCavern(String cavern);

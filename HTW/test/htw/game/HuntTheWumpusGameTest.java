@@ -19,12 +19,12 @@ import static org.junit.Assert.assertTrue;
 public class HuntTheWumpusGameTest {
 
     private HuntTheWumpusGame game;
-    private Set<String> wumpusCaverns;
+    private List<String> wumpusCaverns;
 
     @Before
     public void setUp() {
         game = new HuntTheWumpusGame();
-        wumpusCaverns = new HashSet<String>();
+        wumpusCaverns = new ArrayList<String>();
     }
 
     @Test
@@ -47,7 +47,6 @@ public class HuntTheWumpusGameTest {
         assertTrue(game.getWumpusCaverns().contains("C2"));
     }
 
-    // TODO test moveWumpusHelper and moveWumpuses
     @Test
     public void moveOneWumpus_OneChoice() {
         game = EasyMock.createMockBuilder(HuntTheWumpusGame.class).addMockedMethod("getWumpusChoices").createMock();
@@ -86,7 +85,7 @@ public class HuntTheWumpusGameTest {
     @Test
     public void wumpusCavernsContainsPlayer() {
         String playerCavern = "C1";
-        Set<String> wumpusCaverns = new HashSet<String>();
+        List<String> wumpusCaverns = new ArrayList<String>();
         wumpusCaverns.add("C1");
         wumpusCaverns.add("C2");
         game.setPlayerCavern(playerCavern);
@@ -98,7 +97,7 @@ public class HuntTheWumpusGameTest {
     @Test
     public void wumpusCavernsDoesNotContainPlayer() {
         String playerCavern = "C1";
-        Set<String> wumpusCaverns = new HashSet<String>();
+        List<String> wumpusCaverns = new ArrayList<String>();
         wumpusCaverns.add("D1");
         wumpusCaverns.add("C2");
         game.setPlayerCavern(playerCavern);
@@ -107,7 +106,7 @@ public class HuntTheWumpusGameTest {
         assertFalse(game.isWumpusMovedToPlayer());
     }
 
-    private void addCavernsToGame(HuntTheWumpusGame game, Set<String> wumpusCaverns) {
+    private void addCavernsToGame(HuntTheWumpusGame game, List<String> wumpusCaverns) {
         for (String cavern: wumpusCaverns) {
             game.addWumpusCavern(cavern);
         }
