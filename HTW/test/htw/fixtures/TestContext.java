@@ -36,6 +36,11 @@ public class TestContext implements HtwMessageReceiver {
     messages.add("BAT_TRANSPORT");
   }
 
+  @Override
+  public void playerKilledAllWumpuses() {
+
+  }
+
   public void wumpusMovesToPlayer() {
     messages.add("WUMPUS_MOVES_TO_PLAYER");
   }

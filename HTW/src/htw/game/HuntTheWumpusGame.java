@@ -260,6 +260,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
       private boolean shotWumpus() {
         if (isArrowHitAWumpus(arrowCavern)) {
           messageReceiver.playerKillsWumpus();
+          removeWumpus(arrowCavern);
           hitSomething = true;
           return true;
         }
@@ -286,6 +287,12 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
         return null;
       }
     }
+  }
+
+  private void removeWumpus(String cavern) {
+    wumpusCaverns.remove(cavern);
+    if (wumpusCaverns.isEmpty())
+      messageReceiver.playerKilledAllWumpuses();
   }
 
   private class MoveCommand extends GameCommand {

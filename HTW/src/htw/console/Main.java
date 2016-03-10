@@ -178,7 +178,7 @@ public class Main implements HtwMessageReceiver {
 
 	public void playerKillsWumpus() {
 		System.out.println("You killed the Wumpus.");
-		System.exit(0);
+		//System.exit(0);
 	}
 
 	public void playerShootsWall() {
@@ -207,6 +207,11 @@ public class Main implements HtwMessageReceiver {
 
 	public void batsTransport() {
 		System.out.println("Some bats carried you away.");
+	}
+
+	public void playerKilledAllWumpuses() {
+		System.out.println("You have killed all the Wumpuses.");
+		System.exit(0);
 	}
 
 	private void hit(int points) {
