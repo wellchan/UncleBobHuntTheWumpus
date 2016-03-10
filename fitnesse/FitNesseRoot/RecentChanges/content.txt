@@ -1,10 +1,10 @@
-|HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.WumpusMovesToPlayer||11:20:38 Thu, Mar 10, 2016|
+|HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.WumpusMovesToPlayer||14:45:36 Thu, Mar 10, 2016|
+|HuntTheWumpus.ReleaseOne.HuntingWithArrows.ArrowKillsWumpus||14:42:03 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseTwo.MultipleWumpusesAttack||10:48:58 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseTwo.OneWumpusShot||10:47:50 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.PlayerMovesIntoWumpus||10:46:40 Thu, Mar 10, 2016|
 |HuntTheWumpus.ScenarioLibrary||10:43:57 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseOne.PlayerRecievesStatusAfterEachTurn.PlayerSmellsWumpus||10:41:37 Thu, Mar 10, 2016|
-|HuntTheWumpus.ReleaseOne.HuntingWithArrows.ArrowKillsWumpus||10:32:24 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseTwo.MultipleWumpusesInOneCavern||10:28:37 Thu, Mar 10, 2016|
 |HuntTheWumpus.FutureReleases.CheckNumberWumpusesInPlay||09:41:00 Thu, Mar 10, 2016|
 |HuntTheWumpus.FutureReleases.KillCountGenerated||09:38:32 Thu, Mar 10, 2016|

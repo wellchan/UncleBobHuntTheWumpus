@@ -2,6 +2,7 @@ package htw.fixtures;
 
 import htw.HuntTheWumpus;
 
+import java.util.List;
 import java.util.Map;
 
 import static htw.fixtures.TestContext.game;
@@ -100,11 +101,15 @@ public class HtwFixture {
 	System.out.println("resting until killed.");
     for (int i=0; i<100;  i++) {
       game.makeRestCommand().execute();
-      if (getPlayerCavern().equals(getWumpusCavern()))
+      if (getWumpusCaverns().contains(getPlayerCavern()))
         return true;
     }
 
     return false;
+  }
+
+  private List<String> getWumpusCaverns() {
+    return game.getWumpusCaverns();
   }
 
 
