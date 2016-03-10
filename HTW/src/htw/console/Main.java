@@ -85,7 +85,7 @@ public class Main implements HtwMessageReceiver {
 
 		Scanner input = new Scanner(System.in);
 		int wumpusCounter;
-		System.out.println("Input Your Wumpus Number");
+		System.out.println("Input Your Wumpus Number ");
 		System.out.print("Enter: ");
 		wumpusCounter = input.nextInt();
 
