@@ -136,4 +136,13 @@ public class HtwFixture {
   public int arrowsInCavern(String cavern) {
     return game.getArrowsInCavern(cavern);
   }
+
+  public int wumpusesInGame() {
+    return game.getWumpusCaverns().size();
+  }
+
+  public boolean setWumpusesInGameTo(int wumpuses) {
+    game.setLevel(wumpuses);
+    return true;
+  }
 }

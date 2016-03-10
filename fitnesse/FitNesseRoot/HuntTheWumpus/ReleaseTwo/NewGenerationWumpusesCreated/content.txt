@@ -9,5 +9,5 @@
 |Then a|WUMPUS_KILLED|message is given|
 |Given the player has 1 arrow|
 |shoot arrow| East|
-|Then there are _ wumpuses in play|
+|Then the game has 3 wumpuses|
 
