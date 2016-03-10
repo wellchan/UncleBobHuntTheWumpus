@@ -1,4 +1,0 @@
-!define TEST_SYSTEM {slim}
-!path /Users/zooK/Documents/UncleBobHuntTheWumpus/bin
-
-!contents -R2 -g -p -f -h

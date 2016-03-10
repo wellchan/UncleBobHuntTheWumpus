@@ -1,0 +1,12 @@
+|script|
+|Given the game has 2 wumpuses|
+|Given a wumpus is in cavern|2|
+|Given a wumpus is in cavern|3|
+|Given Three Cavern Map|
+|Given the player is in cavern|1|
+|Given the player has 2 arrows|
+|shoot arrow| East|
+|Then a|WUMPUS_KILLED|message is given|
+|Given the player has 1 arrow|
+|shoot arrow| East|
+|set wumpuses in game to|@Wumpuses in Play?|
