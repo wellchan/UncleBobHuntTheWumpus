@@ -91,7 +91,6 @@ public class Main implements HtwMessageReceiver {
 
 		for (int i = 0; i < wumpusCounter; i++) {
 			game.addWumpusCavern(anyOther(playerCavern));
-			System.out.println("We have " + game.getWumpusCaverns().size() + " Wumpuses");
 		}
 
 		game.addBatCavern(anyOther(playerCavern));
@@ -178,7 +177,7 @@ public class Main implements HtwMessageReceiver {
 
 	public void playerKillsWumpus() {
 		System.out.println("You killed the Wumpus.");
-		//System.exit(0);
+		System.out.println("You have " + game.getWumpusCaverns().size() + " Wumpuses left to kill.");
 	}
 
 	public void playerShootsWall() {
