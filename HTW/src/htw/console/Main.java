@@ -177,7 +177,6 @@ public class Main implements HtwMessageReceiver {
 
 	public void playerKillsWumpus() {
 		System.out.println("You killed the Wumpus.");
-		System.out.println("You have " + game.getWumpusCaverns().size() + " Wumpuses left to kill.");
 	}
 
 	public void playerShootsWall() {
@@ -211,6 +210,11 @@ public class Main implements HtwMessageReceiver {
 	public void playerKilledAllWumpuses() {
 		System.out.println("You have killed all the Wumpuses.");
 		System.exit(0);
+	}
+
+	@Override
+	public void wumpusesRemaining(int wumpusesRemaining) {
+		System.out.println("You have " + wumpusesRemaining + " Wumpuses left to kill.");
 	}
 
 	private void hit(int points) {

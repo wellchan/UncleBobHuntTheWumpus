@@ -259,8 +259,9 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
       private boolean shotWumpus() {
         if (isArrowHitAWumpus(arrowCavern)) {
-          messageReceiver.playerKillsWumpus();
           removeWumpus(arrowCavern);
+          messageReceiver.playerKillsWumpus();
+          messageReceiver.wumpusesRemaining(wumpusCaverns.size());
           hitSomething = true;
           return true;
         }
