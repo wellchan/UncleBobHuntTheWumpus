@@ -1,4 +1,4 @@
-|HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.WumpusMovesToPlayer||14:45:36 Thu, Mar 10, 2016|
+|HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.WumpusMovesToPlayer||15:05:29 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseOne.HuntingWithArrows.ArrowKillsWumpus||14:42:03 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseTwo.MultipleWumpusesAttack||10:48:58 Thu, Mar 10, 2016|
 |HuntTheWumpus.ReleaseTwo.OneWumpusShot||10:47:50 Thu, Mar 10, 2016|
