@@ -2,6 +2,8 @@ package htw.fixtures;
 
 import htw.HuntTheWumpus;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static htw.fixtures.TestContext.game;
@@ -32,7 +34,7 @@ public class HtwFixture {
   }
 
   public String getWumpusCavern() {
-    return game.getWumpusCavern();
+    return game.getWumpusCaverns().get(0);
   }
 
   public boolean freezeWumpus() {
@@ -71,9 +73,10 @@ public class HtwFixture {
   public boolean RestTimesWithWumpusInEachTime(int times, String cavern) {
     TestContext.wumpusCaverns.clear();
     for (int i=0; i<times; i++) {
+      game.setWumpusCaverns(new ArrayList<String>());
       putWumpusInCavern(cavern);
       game.makeRestCommand().execute();
-      incrementCounter(TestContext.wumpusCaverns, game.getWumpusCavern());
+      incrementCounter(TestContext.wumpusCaverns, game.getWumpusCaverns().get(0));
     }
     return true;
   }
@@ -100,11 +103,15 @@ public class HtwFixture {
 	System.out.println("resting until killed.");
     for (int i=0; i<100;  i++) {
       game.makeRestCommand().execute();
-      if (getPlayerCavern().equals(getWumpusCavern()))
+      if (getWumpusCaverns().contains(getPlayerCavern()))
         return true;
     }
 
     return false;
+  }
+
+  private List<String> getWumpusCaverns() {
+    return game.getWumpusCaverns();
   }
 
 

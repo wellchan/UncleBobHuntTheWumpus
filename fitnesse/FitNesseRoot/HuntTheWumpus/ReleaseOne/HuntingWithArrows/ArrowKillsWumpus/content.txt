@@ -5,4 +5,4 @@
 |Given the player has 1 arrow|
 |When the player shoots East|
 |Then there are 0 arrows in cavern FarRight|
-|Then a|WUMPUS_KILLED|message is given|
+|Then a|ALL_WUMPUSES_DEAD|message is given|

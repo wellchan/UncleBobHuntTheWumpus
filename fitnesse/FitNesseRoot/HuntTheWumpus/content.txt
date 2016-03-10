@@ -1,0 +1,4 @@
+!define TEST_SYSTEM {slim}
+!path /Users/admin/git/UncleBobHuntTheWumpus/bin
+
+!contents -R2 -g -p -f -h
