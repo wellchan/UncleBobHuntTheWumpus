@@ -45,6 +45,8 @@
 |scenario|When the player rests until killed|
 |rest until killed|
 
+
+
 !3 Arrow Scenarios
 |scenario|Given the player has no arrows|
 |set arrows in quiver to|0|
@@ -93,7 +95,6 @@
 |check| wumpuses in game|@wumpuses|
 
 |scenario|Wumpuses in Play|
-|Wumpuses in Play|
 |Wumpuses Killed|Wumpuses in Play?|
 |0|1|
 |1|2|
@@ -106,7 +107,10 @@
 |8|2|
 |9|1|
 |10|5|
-|set wumpuses in game to|@Wumpuses in Play?|
+
+|scenario|Then there are _ wumpuses in play|wumpuses|
+|check|wumpuses in play|@wumpuses|
+
 
 
 !3 Message Scenarios
